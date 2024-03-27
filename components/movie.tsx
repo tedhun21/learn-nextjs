@@ -17,7 +17,9 @@ export default function Movie({ id, title, poster_path }: IMovieProps) {
   return (
     <div className={styles.movie}>
       <img src={poster_path} alt={title} onClick={onClick} />
-      <Link href={`/moives/${id}`}>{title}</Link>
+      <Link prefetch href={`/moives/${id}`}>
+        {title}
+      </Link>
     </div>
   );
 }
